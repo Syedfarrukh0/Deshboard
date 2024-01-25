@@ -1,0 +1,17 @@
+.comments {
+    // border: 2px solid yellow;
+
+    .comment_text {
+        // display: -webkit-box;
+        // -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        // overflow: hidden;
+    }
+}
+
+.chat_comments_area{
+    // border: 2px solid darkmagenta;
+    height: 15.5rem;
+    overflow: hidden;
+    overflow-y: auto;
+}

@@ -1,0 +1,27 @@
+.sprater{
+    background-image: radial-gradient(circle, #808080, #979798, #aeb0b1, #c6c8ca, #dee2e3);
+}
+
+// .d_content{
+//     border: 2px solid green;
+//     // top: 5.5rem !important;
+// }
+
+.notification_card:hover{
+    border-radius: 0.75rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.d_down_notification::-webkit-scrollbar{
+    width: 0.2rem;
+}
+.d_down_notification::-webkit-scrollbar-track{
+    background-color: #80808083;
+}
+.d_down_notification::-webkit-scrollbar-thumb{
+    background-color: #fff;
+}

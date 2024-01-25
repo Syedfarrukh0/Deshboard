@@ -1,0 +1,21 @@
+.chart_div {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .recharts-legend-wrapper {
+        width: fit-content !important;
+        left: 0% !important;
+    
+    }
+
+    .tremor-Legend-legendItem{
+        padding: 0% !important;
+    }
+    
+    .tremor-Legend-legendItem>svg {
+        display: none !important;
+    }
+
+    .ring-tremor-ring {
+        --tw-ring-opacity: 0;
+    }
+}

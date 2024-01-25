@@ -1,0 +1,30 @@
+// .side_bar_wraperr{
+//     border: 2px solid teal;
+// }
+
+.side_bar_box{
+    // border: 2px solid olive;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.side_bar_box::-webkit-scrollbar{
+    width: 0%;
+}
+
+.sidebar-button-hover-effect:hover{
+    border-radius: 0.75rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.active_side_nav{
+    border-radius: 0.75rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}

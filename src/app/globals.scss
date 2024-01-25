@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main {
+  border: 2px solid red;
+}
+
+.color_h_pri{
+  color: #344767;
+}
+
+.color_t_pri{
+  color: #67748e;
+}
+
+// .body__wraper{
+//   border: 2px solid green;
+// }
+
+
+// .main_area{
+//   border: 2px solid blue;
+// }
+
+// .main_area_wrap{
+//   border: 2px solid olive;
+// }
+
+.main_area::-webkit-scrollbar, .member_card::-webkit-scrollbar, .todo_card::-webkit-scrollbar, .progress_track_card::-webkit-scrollbar, .chat_write::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+.main_area::-webkit-scrollbar-track, .member_card::-webkit-scrollbar-track, .todo_card::-webkit-scrollbar-track, .progress_track_card::-webkit-scrollbar-track, .chat_write::-webkit-track {
+  background-color: #80808083;
+}
+
+.main_area::-webkit-scrollbar-thumb, .member_card::-webkit-scrollbar-thumb, .todo_card::-webkit-scrollbar-thumb, .progress_track_card::-webkit-scrollbar-thumb, .chat_write::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+@import '../app/pages/deshboard/deshboard';
+@import '../components/sidebar/sidebar';
+@import '../components/header/header';
+@import '../components/custom_ui/custom_ui';
+@import '../components/card/card';
+@import '../components/chart/chart';
+@import '../components/slider/slider';
+@import '../components/member_card/member_card';
+@import '../components/todo_card/todo_card';
+@import '../components/progress_track_card/progress_track_card';
+@import '../components/post_card/post_card';
+@import '../components/postchat/postchat';
+@import '../components/project_track_card/project_track_card';
