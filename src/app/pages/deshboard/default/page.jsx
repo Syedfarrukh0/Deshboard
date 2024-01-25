@@ -45,6 +45,7 @@ const Default = () => {
                     </div>
                 </div>
             </div>
+            
             <div className="border border-black mt-5 h-44">
 
             </div>
