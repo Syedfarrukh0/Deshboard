@@ -292,56 +292,68 @@ export function Table_Progress_Track() {
 // custom project track table
 // ////////////////////////////////////
 import { HiDotsVertical } from "react-icons/hi";
+import { GoDotFill } from "react-icons/go";
 
 const project_tracks = [
     {
         id: 1,
         avatar: logo_1,
-        budget: '$'+2500,
-        name: "React Material Dashboard",
+        avatar_name: "Jira",
+        budget: '$' + 2500,
+        work: <GoDotFill />,
         bg_color: 'bg-blue-700',
+        status: "working",
+        name: "React Material Dashboard",
         progress: 80,
         dots: <HiDotsVertical />
     },
     {
         id: 2,
         avatar: logo_2,
-        budget: '$'+5000,
-        work: "Samantha Ivy",
-        status: "online",
-        name: "Modestic Design System",
+        avatar_name: "Argon",
+        budget: '$' + 5000,
+        work: <GoDotFill />,
         bg_color: 'bg-orange-700',
+        status: "done",
+        name: "Modestic Design System",
         progress: 30,
         dots: <HiDotsVertical />
     },
     {
         id: 3,
         avatar: logo_3,
-        budget: '$'+2500,
-        work: "Samantha Ivy",
-        status: "online",
-        name: "VueJs Now UI Kit PRO",
+        avatar_name: "Spotify",
+        budget: '$' + 2500,
+        work: <GoDotFill />,
         bg_color: 'bg-green-700',
+        status: "canceled",
+        name: "VueJs Now UI Kit PRO",
         progress: 100,
         dots: <HiDotsVertical />
     },
     {
         id: 4,
         avatar: logo_4,
-        budget: '$'+3400,
-        work: "Samantha Ivy",
-        status: "online",
-        name: "Soft UI Dashboard",
+        avatar_name: "Bootstrap",
+        budget: '$' + 3400,
+        work: <GoDotFill />,
         bg_color: 'bg-purple-700',
+        status: "canceled",
+        name: "Soft UI Dashboard",
         progress: 10,
         dots: <HiDotsVertical />
     },
     // {
     //     id: 5,
-    //     avatar: "",
-    //     name: "Samantha Ivy",
-    //     status: "online",
-    //     btn_name: "Add",
+    //     avatar: logo_4,
+    //     avatar_name: "Bootstrap",
+    //     budget: '$' + 3400,
+    //     work: <GoDotFill />,
+    //     bg_color: 'bg-purple-700',
+    //     status: "canceled",
+    //     name: "Soft UI Dashboard",
+    //     progress: 10,
+    //     dots: <HiDotsVertical />
     // }
 ]
 
@@ -350,27 +362,121 @@ export function Table_Project_Track() {
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableHead className="w-[100px]"> Project </TableHead>
+                    <TableHead className="w-[140px]"> Project </TableHead>
                     <TableHead> Budget </TableHead>
                     <TableHead> Status </TableHead>
-                    <TableHead className=""> Completion </TableHead>
-                    <TableHead className=""></TableHead>
+                    <TableHead> Completion </TableHead>
+                    <TableHead className='w-[80px]'></TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 {project_tracks.map((project_track) => (
                     <TableRow key={project_track.id}>
-                        <TableCell className="font-medium w-0">{<Avatar_pri img={project_track.avatar} class='rounded-md cursor-pointer' />}</TableCell>
+                        <TableCell className="font-medium w-0 flex items-center">{<Avatar_pri img={project_track.avatar} class='rounded-md cursor-pointer me-1' />} <h6>{project_track.avatar_name}</h6> </TableCell>
                         <TableCell> {project_track.budget} </TableCell>
-                        <TableCell> 
-                            <h6 className="text-base font-medium mb-2 cursor-pointer hover:text-blue-700 hover:translate-x-1 transition">{project_track.work}</h6>
-                            <small className={`${project_track.status == 'online' ? 'bg-green-300 text-green-900' : project_track.status == 'in meeting' ? 'bg-orange-200 text-orange-900' : project_track.status == 'offline' ? 'bg-red-200 text-red-900' : 'bg-slate-200 text-slate-900'} bg--green-300 py-1 px-2 rounded-sm  font-medium`}>{project_track.status}</small> 
+                        <TableCell className="">
+                            <div className="h-full flex items-center">
+                                <h6 className={`${project_track.status == 'working' ? 'text-sky-500' : project_track.status == 'done' ? 'text-green-500' : project_track.status == 'canceled' ? 'text-red-500' : 'bg--slate-200 text-slate-900'} bg--green-300 py--1 pe-2 rounded-sm font-medium`}>{project_track.work}</h6>
+                                <small className={'text-[0.8rem] font-medium'}>{project_track.status}</small>
+                            </div>
                         </TableCell>
                         <TableCell className="py-0">
                             <h6 className="text-base font-medium mb-2">{project_track.name}</h6>
                             <small className={`w-auto`}> <Progress_bar_pri class={`w-full h-1 ${project_track.bg_color}`} progress={project_track.progress} /> </small>
                         </TableCell>
-                        <TableCell> {project_track.dots} </TableCell>
+                        <TableCell> <div className='h-full flex items-center justify-center'> {project_track.dots} </div> </TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
+    )
+}
+
+
+// ////////////////////////////////////
+// custom sales track table
+// ////////////////////////////////////
+const sale_tracks = [
+    {
+        id: 1,
+        avatar: team_1,
+        country: "Country:",
+        state: "United States",
+        sales: "Sales:",
+        amount: '2500',
+        value: "Value:",
+        val_amt: '$230,900',
+        bounce: "Bounce:",
+        bounce_amt: '29.9%',
+    },
+    {
+        id: 2,
+        avatar: team_2,
+        country: "Country:",
+        state: "Germany",
+        sales: "Sales:",
+        amount: '3.900',
+        value: "Value:",
+        val_amt: '$440,000',
+        bounce: "Bounce:",
+        bounce_amt: '40.22%',
+    },
+    {
+        id: 3,
+        avatar: team_3,
+        country: "Country:",
+        state: "Great Britain",
+        sales: "Sales:",
+        amount: '1.400',
+        value: "Value:",
+        val_amt: '$190,700',
+        bounce: "Bounce:",
+        bounce_amt: '23.44%',
+    },
+    {
+        id: 4,
+        avatar: team_4,
+        country: "Country:",
+        state: "Brasil",
+        sales: "Sales:",
+        amount: '562',
+        value: "Value:",
+        val_amt: '$143,960',
+        bounce: "Bounce:",
+        bounce_amt: '32.14%',
+    },
+    // {
+    //     id: 5,
+    //     avatar: "",
+    // Country: "Country:",
+    //     status: "online",
+    //     btn_name: "Add",
+    // }
+]
+
+export function Table_Sale_Track() {
+    return (
+        <Table>
+            <TableBody>
+                {sale_tracks.map((sale_track) => (
+                    <TableRow key={sale_track.id}>
+                        <TableCell className="font-medium w-0">{<Avatar_pri img={sale_track.avatar} class='rounded-md cursor-pointer' />}</TableCell>
+                        <TableCell className="py-0">
+                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.country}</h6>
+                            <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.state}</small>
+                        </TableCell>
+                        <TableCell className="py-0">
+                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.sales}</h6>
+                            <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.amount}</small>
+                        </TableCell>
+                        <TableCell className="py-0">
+                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.value}</h6>
+                            <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.val_amt}</small>
+                        </TableCell>
+                        <TableCell className="py-0">
+                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.bounce}</h6>
+                            <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.bounce_amt}</small>
+                        </TableCell>
                     </TableRow>
                 ))}
             </TableBody>

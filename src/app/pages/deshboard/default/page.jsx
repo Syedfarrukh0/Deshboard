@@ -1,7 +1,7 @@
 'use client'
 
 // components
-import Card from "@/components/card/card";
+import Card, { Card_1, Card_2 } from "@/components/card/card";
 import Chart from "@/components/chart/chart";
 import Slider from "@/components/slider/page";
 import MemberCard from "@/components/member_card/member_card";
@@ -15,6 +15,14 @@ import Todo_Card from "@/components/todo_card/todo_card";
 import Progress_Track_Card from "@/components/progress_track_card/progress_track_card";
 import PostCard from "@/components/post_card/post_card";
 import Project_Track_Card from "@/components/project_track_card/project_track_card";
+import card_2_bg from '../../../../../public/images/card_bg_2.png';
+import card_1_bg from '../../../../../public/images/card_bg_1.png';
+import Sale_Track_Card from "@/components/sales_track_card/sales_track_card";
+
+const card_2 = {
+    bg_color_gradient_1: 'linear-gradient(310deg,#212229,#212529)',
+    bg_color_gradient_2: 'linear-gradient(310deg,#f5365c,#f56036)',
+} 
 
 const Default = () => {
 
@@ -40,13 +48,16 @@ const Default = () => {
                 <PostCard class={`col-span-5`} />
                 <div className="border border-red-600 col-span-7 flex flex-col">
                     <Project_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3`} />
-                    <div className="border border-green-800">
-
+                    <div className="border border-green-800 flex justify-around flex--wrap md:flex--nowrap xl:justify-between flex-col sm:flex-row mt-5 gap-5">
+                        <Card_2 bg_color_gradient={card_2.bg_color_gradient_1}  />
+                        <Card_1 bg_color_gradient={card_2.bg_color_gradient_2} />
                     </div>
+                    <Sale_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3 mt-5`} />
                 </div>
             </div>
-            
             <div className="border border-black mt-5 h-44">
+
+
 
             </div>
         </div>
