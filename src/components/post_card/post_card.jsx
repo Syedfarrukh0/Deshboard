@@ -1,8 +1,7 @@
 'use client'
 
-import * as React from "react"
- 
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,7 +9,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
+import { useRef, useEffect } from "react";
 
 import { Avatar_pri } from "../custom_ui/avatar";
 import team_4 from "../../../public/images/team-4.jpg";
@@ -57,11 +57,25 @@ const comments = [
 ];
 
 const PostCard = (props) => {
+    // let height_ref = useRef(null);
+    // console.log(height_ref.current.offsetHeight);
+
+    // const getDivHeight = () => {
+    //     const divElement = document.getElementById('aaa');
+    //     if (divElement) {
+    //         const height = divElement.offsetHeight;
+    //         console.log(height);
+    //     }
+    // }
+
+    // useEffect(()=>{
+    //     getDivHeight();
+    // },[])
 
     return (
-        <div className={`post_card_box h-full ${props.class}`}>
+        <div className={`post_card_box h-full ${props.class}`} id="aaa">
            
-           <Card className={`post_card_wrap w-full`}>
+            <Card className={`post_card_wrap w-full`}>
 
                 <CardHeader className='p-3'>
                     <div className="w-full flex justify-between items-center">
@@ -84,7 +98,7 @@ const PostCard = (props) => {
                         Beatae labore vercel
                     </p>
                     <Image className="post_image borrder border--red-600 h-[30rem] rounded-xl mt-4 object-cover" src={post_img} alt={post_img} />
-                    <PostChat comments={comments} no_of_likes_comments_shares={no_of_likes_comments_shares} />
+                    <PostChat comments={comments} no_of_likes_comments_shares={no_of_likes_comments_shares} setChatareaHeight={props.setChatareaHeight} />
                 </CardContent>
 
             </Card>

@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useState } from "react";
+
 // components
 import Card, { Card_1, Card_2 } from "@/components/card/card";
 import Chart from "@/components/chart/chart";
@@ -15,9 +17,8 @@ import Todo_Card from "@/components/todo_card/todo_card";
 import Progress_Track_Card from "@/components/progress_track_card/progress_track_card";
 import PostCard from "@/components/post_card/post_card";
 import Project_Track_Card from "@/components/project_track_card/project_track_card";
-import card_2_bg from '../../../../../public/images/card_bg_2.png';
-import card_1_bg from '../../../../../public/images/card_bg_1.png';
 import Sale_Track_Card from "@/components/sales_track_card/sales_track_card";
+
 
 const card_2 = {
     bg_color_gradient_1: 'linear-gradient(310deg,#212229,#212529)',
@@ -25,8 +26,11 @@ const card_2 = {
 } 
 
 const Default = () => {
-
     //  use pb-36 only development
+    const [chatarea_height, setChatareaHeight] = useState('h-[12.4rem]');
+    console.log(chatarea_height);
+
+
     return (
         <div className="h--screen">
             <div className={`line_1 cards_box mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5`}>
@@ -45,14 +49,14 @@ const Default = () => {
                 <Progress_Track_Card class={`sm:col-span-full xl:col-span-3`} />
             </div>
             <div className={`line_4 h--[25rem] mt-5 grid xl:grid-cols-12 gap-5`}>
-                <PostCard class={`col-span-5`} />
+                <PostCard class={`col-span-5`} setChatareaHeight={setChatareaHeight} />
                 <div className="border border-red-600 col-span-7 flex flex-col">
                     <Project_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3`} />
                     <div className="border border-green-800 flex justify-around flex--wrap md:flex--nowrap xl:justify-between flex-col sm:flex-row mt-5 gap-5">
                         <Card_2 bg_color_gradient={card_2.bg_color_gradient_1}  />
                         <Card_1 bg_color_gradient={card_2.bg_color_gradient_2} />
                     </div>
-                    <Sale_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3 mt-5`} />
+                    <Sale_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3 mt-5`} chatarea_height={chatarea_height} />
                 </div>
             </div>
             <div className="border border-black mt-5 h-44">

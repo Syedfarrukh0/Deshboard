@@ -10,7 +10,7 @@ import { RiShareForwardLine } from "react-icons/ri";
 import { SeparatorPri } from "../custom_ui/separator";
 import { IoSendOutline } from "react-icons/io5";
 import { ButtonSec } from "../custom_ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 // import bruce_mars from '../../../public/images/bruce-mars.jpg';
@@ -23,9 +23,18 @@ export function PostChat(props) {
         setId(e);
     }
 
-    console.log(id);
+    // console.log(id);
 
     const [commentToggler, setCommentToggler] = useState(false);
+
+    // Apply height for open the chatarea
+    useEffect(()=>{
+        if (commentToggler === true) {
+            props.setChatareaHeight('h-[27.9rem]');
+        }else {
+            props.setChatareaHeight('h-[12rem]');
+        }
+    },[commentToggler])
 
     const [show, setShow] = useState(false);
     const lineToggle = () => {

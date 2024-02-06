@@ -445,13 +445,42 @@ const sale_tracks = [
         bounce: "Bounce:",
         bounce_amt: '32.14%',
     },
-    // {
-    //     id: 5,
-    //     avatar: "",
-    // Country: "Country:",
-    //     status: "online",
-    //     btn_name: "Add",
-    // }
+    {
+        id: 5,
+        avatar: team_4,
+        country: "Country:",
+        state: "Brasil",
+        sales: "Sales:",
+        amount: '562',
+        value: "Value:",
+        val_amt: '$143,960',
+        bounce: "Bounce:",
+        bounce_amt: '32.14%',
+    },
+    {
+        id: 6,
+        avatar: team_4,
+        country: "Country:",
+        state: "Brasil",
+        sales: "Sales:",
+        amount: '562',
+        value: "Value:",
+        val_amt: '$143,960',
+        bounce: "Bounce:",
+        bounce_amt: '32.14%',
+    },
+    {
+        id: 7,
+        avatar: team_4,
+        country: "Country:",
+        state: "Brasil",
+        sales: "Sales:",
+        amount: '562',
+        value: "Value:",
+        val_amt: '$143,960',
+        bounce: "Bounce:",
+        bounce_amt: '32.14%',
+    }
 ]
 
 export function Table_Sale_Track() {
