@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from "react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,7 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useRef, useEffect } from "react";
 
 import { Avatar_pri } from "../custom_ui/avatar";
 import team_4 from "../../../public/images/team-4.jpg";
@@ -57,23 +55,8 @@ const comments = [
 ];
 
 const PostCard = (props) => {
-    // let height_ref = useRef(null);
-    // console.log(height_ref.current.offsetHeight);
-
-    // const getDivHeight = () => {
-    //     const divElement = document.getElementById('aaa');
-    //     if (divElement) {
-    //         const height = divElement.offsetHeight;
-    //         console.log(height);
-    //     }
-    // }
-
-    // useEffect(()=>{
-    //     getDivHeight();
-    // },[])
-
     return (
-        <div className={`post_card_box h-full ${props.class}`} id="aaa">
+        <div className={`post_card_box h-full ${props.class}`}>
            
             <Card className={`post_card_wrap w-full`}>
 

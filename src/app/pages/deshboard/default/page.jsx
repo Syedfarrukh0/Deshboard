@@ -28,8 +28,6 @@ const card_2 = {
 const Default = () => {
     //  use pb-36 only development
     const [chatarea_height, setChatareaHeight] = useState('h-[12.4rem]');
-    console.log(chatarea_height);
-
 
     return (
         <div className="h--screen">
@@ -48,20 +46,20 @@ const Default = () => {
                 <Todo_Card class={`sm:col-span-4 xl:col-span-3`} />
                 <Progress_Track_Card class={`sm:col-span-full xl:col-span-3`} />
             </div>
-            <div className={`line_4 h--[25rem] mt-5 grid xl:grid-cols-12 gap-5`}>
-                <PostCard class={`col-span-5`} setChatareaHeight={setChatareaHeight} />
-                <div className="border border-red-600 col-span-7 flex flex-col">
-                    <Project_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3`} />
-                    <div className="border border-green-800 flex justify-around flex--wrap md:flex--nowrap xl:justify-between flex-col sm:flex-row mt-5 gap-5">
+            <div className={`line_4 h--[25rem] mt-5 grid grid-cols-1 xl:grid-cols-12 gap-5`}>
+                <PostCard class={`col-span-7 xl:col-span-5`} setChatareaHeight={setChatareaHeight} />
+
+                <div className="col-span-7 flex flex-col">
+                    <Project_Track_Card class={`sm:col-span-full xl:col-span-3`} />
+                    <div className="flex justify-around flex--wrap md:flex--nowrap xl:justify-between flex-col sm:flex-row mt-5 gap-5">
                         <Card_2 bg_color_gradient={card_2.bg_color_gradient_1}  />
                         <Card_1 bg_color_gradient={card_2.bg_color_gradient_2} />
                     </div>
-                    <Sale_Track_Card class={`border border-green-800 sm:col-span-full xl:col-span-3 mt-5`} chatarea_height={chatarea_height} />
+                    <Sale_Track_Card class={`sm:col-span-full xl:col-span-3 mt-5`} chatarea_height={chatarea_height} />
                 </div>
             </div>
+
             <div className="border border-black mt-5 h-44">
-
-
 
             </div>
         </div>

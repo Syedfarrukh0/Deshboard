@@ -47,7 +47,6 @@ const Header = (props) => {
                     <SheetPri icon={<IoSettingsOutline className="m-0 text-xl" />} />
 
                 </div>
-
                
             </div>
             <SeparatorPri class={{a:'', b: 'm-0'}} />

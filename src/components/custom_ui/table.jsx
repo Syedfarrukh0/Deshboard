@@ -363,7 +363,7 @@ export function Table_Project_Track() {
             <TableHeader>
                 <TableRow>
                     <TableHead className="w-[140px]"> Project </TableHead>
-                    <TableHead> Budget </TableHead>
+                    <TableHead className="ps-16 sm:ps-[unset]"> Budget </TableHead>
                     <TableHead> Status </TableHead>
                     <TableHead> Completion </TableHead>
                     <TableHead className='w-[80px]'></TableHead>
@@ -373,7 +373,7 @@ export function Table_Project_Track() {
                 {project_tracks.map((project_track) => (
                     <TableRow key={project_track.id}>
                         <TableCell className="font-medium w-0 flex items-center">{<Avatar_pri img={project_track.avatar} class='rounded-md cursor-pointer me-1' />} <h6>{project_track.avatar_name}</h6> </TableCell>
-                        <TableCell> {project_track.budget} </TableCell>
+                        <TableCell className="ps-16 sm:ps-[unset]"> {project_track.budget} </TableCell>
                         <TableCell className="">
                             <div className="h-full flex items-center">
                                 <h6 className={`${project_track.status == 'working' ? 'text-sky-500' : project_track.status == 'done' ? 'text-green-500' : project_track.status == 'canceled' ? 'text-red-500' : 'bg--slate-200 text-slate-900'} bg--green-300 py--1 pe-2 rounded-sm font-medium`}>{project_track.work}</h6>
@@ -381,7 +381,7 @@ export function Table_Project_Track() {
                             </div>
                         </TableCell>
                         <TableCell className="py-0">
-                            <h6 className="text-base font-medium mb-2">{project_track.name}</h6>
+                            <h6 className="text-xs sm:text-base font-medium mb-2">{project_track.name}</h6>
                             <small className={`w-auto`}> <Progress_bar_pri class={`w-full h-1 ${project_track.bg_color}`} progress={project_track.progress} /> </small>
                         </TableCell>
                         <TableCell> <div className='h-full flex items-center justify-center'> {project_track.dots} </div> </TableCell>
