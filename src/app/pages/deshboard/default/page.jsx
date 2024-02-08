@@ -18,6 +18,7 @@ import Progress_Track_Card from "@/components/progress_track_card/progress_track
 import PostCard from "@/components/post_card/post_card";
 import Project_Track_Card from "@/components/project_track_card/project_track_card";
 import Sale_Track_Card from "@/components/sales_track_card/sales_track_card";
+import AuthorCard from "@/components/author_card/author_card";
 
 
 const card_2 = {
@@ -41,7 +42,7 @@ const Default = () => {
                 <Chart class={`col-span-3`} />
                 <Slider class={`col-span-2`} />
             </div>
-            <div className={`line_3 h-fit mt-5 grid grid-cols-1 sm:grid-cols-8 xl:grid-cols-9 lg: gap-5`}>
+            <div className={`line_3 h-fit mt-5 grid grid-cols-1 sm:grid-cols-8 xl:grid-cols-9 gap-5`}>
                 <MemberCard class={`sm:col-span-4 xl:col-span-3`} />
                 <Todo_Card class={`sm:col-span-4 xl:col-span-3`} />
                 <Progress_Track_Card class={`sm:col-span-full xl:col-span-3`} />
@@ -58,8 +59,10 @@ const Default = () => {
                     <Sale_Track_Card class={`sm:col-span-full xl:col-span-3 mt-5`} chatarea_height={chatarea_height} />
                 </div>
             </div>
-
-            <div className="border border-black mt-5 h-44">
+            <div className="border border-black mt-5 grid sm:grid-cols-8 xl:grid-cols-9 gap-5">
+                <AuthorCard class={`sm:col-span-4 xl:col-span-5`} />
+            </div>
+            <div className="border border-black mt-5 h-11">
 
             </div>
         </div>

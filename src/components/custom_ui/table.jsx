@@ -512,3 +512,117 @@ export function Table_Sale_Track() {
         </Table>
     )
 }
+
+
+// ////////////////////////////////////
+// custom author table
+// ////////////////////////////////////
+// import { Avatar_pri } from "./avatar"
+// import { ButtonPri } from "./button"
+
+// import team_1 from "../../../public/images/team-1.jpg";
+// import team_2 from "../../../public/images/team-2.jpg";
+// import team_3 from "../../../public/images/team-3.jpg";
+// import team_4 from "../../../public/images/team-4.jpg";
+
+
+const author_members = [
+    {
+        id: 1,
+        avatar: team_1,
+        name: "John Michael",
+        email: "johnmichael@gmail.com",
+        post: "Manager",
+        role: "organization",
+        status: "Online",
+        employed_date: "23/04/18",
+        btn: "Edit" 
+    },
+    {
+        id: 2,
+        avatar: team_2,
+        name: "Alex Smith",
+        email: "alexsmith@gmail.com",
+        post: "Programator",
+        role: "Developer",
+        status: "Offline",
+        employed_date: "11/01/19",
+        btn: "Edit"
+    },
+    {
+        id: 3,
+        avatar: team_3,
+        name: "Samantha Ivy",
+        email: "samanthaivy@gmail.com",
+        post: "Executive",
+        role: "Projects",
+        status: "Online",
+        employed_date: "19/09/17",
+        btn: "Edit"
+    },
+    {
+        id: 4,
+        avatar: team_4,
+        name: "Samantha Ivy",
+        email: "samanthaivy@gmail.com",
+        post: "Programator",
+        role: "Developer",
+        status: "Online",
+        employed_date: "24/12/08",
+        btn: "Edit"
+    },
+    {
+        id: 5,
+        avatar: team_4,
+        name: "Samantha Ivy",
+        email: "samanthaivy@gmail.com",
+        post: "Programator",
+        role: "Developer",
+        status: "Online",
+        employed_date: "24/12/08",
+        btn: "Edit"
+    },
+]
+
+export function Table_Author_Member() {
+    return (
+        <Table className='overflow-hidden'>
+            <TableHeader>
+                <TableRow>
+                    <TableHead className=""> Author </TableHead>
+                    <TableHead className=""></TableHead>
+                    <TableHead className=""> Function </TableHead>
+                    <TableHead className=""> Technology </TableHead>
+                    <TableHead className=""> Employed </TableHead>
+                    <TableHead className=""></TableHead>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                {author_members.map((author_member) => (
+                    <TableRow key={author_member.id}>
+                        <TableCell className="font-medium w-0">
+                            {<Avatar_pri img={author_member.avatar} class='rounded-md cursor-pointer' />}
+                            </TableCell>
+                        <TableCell className="py-0">
+                            <h6 className="text-base font-medium cursor-pointer hover:text-blue-700 hover:translate-x-1 transition">{author_member.name}</h6>
+                            <small className={` text-slate-900 rounded-sm text-sm font-medium`}>{author_member.email}</small>
+                        </TableCell>
+                        <TableCell>
+                            <h6 className="text-base font-medium">{author_member.post}</h6>
+                            <small className={` text-slate-900 rounded-sm text-sm font-medium`}>{author_member.role}</small>
+                        </TableCell>
+                        <TableCell>
+                            <small className={`${author_member.status == 'Online' ? 'bg-green-300 text-green-900' : author_member.status == 'in meeting' ? 'bg-orange-200 text-orange-900' : author_member.status == 'Offline' ? 'bg-red-200 text-red-900' : 'bg-slate-200 text-slate-900'} bg--green-300 py-1 px-2 rounded-sm  font-medium ms-3`}>{author_member.status}</small>
+                        </TableCell>
+                        <TableCell>
+                            <h6 className="text-sm text-slate-900 font-medium ms-1">{author_member.employed_date}</h6>
+                        </TableCell>
+                        <TableCell>
+                                <h6 className="text-sm text-slate-900 ms-1 cursor-pointer font-semibold hover:underline hover:text-blue-700 transition">{author_member.btn}</h6>
+                        </TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
+    )
+}

@@ -2,7 +2,6 @@
 
 import { SeparatorPri } from "../custom_ui/separator";
 import { Table_Team_Member } from "../custom_ui/table";
-// import Card from "../custom_ui/card";
 
 const MemberCard = (props) => {
     return (
