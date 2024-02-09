@@ -7,7 +7,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 
 // ////////////////////////////////////
@@ -97,7 +98,7 @@ export function TableDemo() {
 // custom team table
 // ////////////////////////////////////
 import { Avatar_pri } from "./avatar"
-import { ButtonPri } from "./button"
+import { ButtonPri, ButtonSec } from "./button"
 
 import team_1 from "../../../public/images/team-1.jpg";
 import team_2 from "../../../public/images/team-2.jpg";
@@ -491,19 +492,19 @@ export function Table_Sale_Track() {
                     <TableRow key={sale_track.id}>
                         <TableCell className="font-medium w-0">{<Avatar_pri img={sale_track.avatar} class='rounded-md cursor-pointer' />}</TableCell>
                         <TableCell className="py-0">
-                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.country}</h6>
+                            <h6 className="text-slate-500 text-xs font-medium mb-1">{sale_track.country}</h6>
                             <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.state}</small>
                         </TableCell>
                         <TableCell className="py-0">
-                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.sales}</h6>
+                            <h6 className="text-slate-500 text-xs font-medium mb-1">{sale_track.sales}</h6>
                             <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.amount}</small>
                         </TableCell>
                         <TableCell className="py-0">
-                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.value}</h6>
+                            <h6 className="text-slate-500 text-xs font-medium mb-1">{sale_track.value}</h6>
                             <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.val_amt}</small>
                         </TableCell>
                         <TableCell className="py-0">
-                            <h6 className="text-xs font-medium mb-1 cursor-pointer hover:text-blue-700 ">{sale_track.bounce}</h6>
+                            <h6 className="text-slate-500 text-xs font-medium mb-1">{sale_track.bounce}</h6>
                             <small className={`rounded-sm text-[0.85rem] font-semibold`}>{sale_track.bounce_amt}</small>
                         </TableCell>
                     </TableRow>
@@ -605,20 +606,89 @@ export function Table_Author_Member() {
                             </TableCell>
                         <TableCell className="py-0">
                             <h6 className="text-base font-medium cursor-pointer hover:text-blue-700 hover:translate-x-1 transition">{author_member.name}</h6>
-                            <small className={` text-slate-900 rounded-sm text-sm font-medium`}>{author_member.email}</small>
+                            <small className={` text-slate-500 rounded-sm text-sm font-medium`}>{author_member.email}</small>
                         </TableCell>
                         <TableCell>
                             <h6 className="text-base font-medium">{author_member.post}</h6>
-                            <small className={` text-slate-900 rounded-sm text-sm font-medium`}>{author_member.role}</small>
+                            <small className={` text-slate-500 rounded-sm text-sm font-medium`}>{author_member.role}</small>
                         </TableCell>
                         <TableCell>
-                            <small className={`${author_member.status == 'Online' ? 'bg-green-300 text-green-900' : author_member.status == 'in meeting' ? 'bg-orange-200 text-orange-900' : author_member.status == 'Offline' ? 'bg-red-200 text-red-900' : 'bg-slate-200 text-slate-900'} bg--green-300 py-1 px-2 rounded-sm  font-medium ms-3`}>{author_member.status}</small>
+                            <small className={`${author_member.status == 'Online' ? 'bg-green-300 text-green-900' : author_member.status == 'in meeting' ? 'bg-orange-200 text-orange-900' : author_member.status == 'Offline' ? 'bg-red-200 text-red-900' : 'bg-slate-200 text-slate-900'} bg--green-300 py-1 px-2 rounded-sm font-medium ms-3`}>{author_member.status}</small>
                         </TableCell>
                         <TableCell>
                             <h6 className="text-sm text-slate-900 font-medium ms-1">{author_member.employed_date}</h6>
                         </TableCell>
                         <TableCell>
                                 <h6 className="text-sm text-slate-900 ms-1 cursor-pointer font-semibold hover:underline hover:text-blue-700 transition">{author_member.btn}</h6>
+                        </TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
+    )
+}
+
+
+// ////////////////////////////////////
+// custom category table
+// ////////////////////////////////////
+// import { Avatar_pri } from "./avatar"
+// import { ButtonPri } from "./button"
+import { HiOutlineDeviceMobile } from "react-icons/hi";
+import { IoTicketOutline } from "react-icons/io5";
+import { GoInbox } from "react-icons/go";
+import { HiOutlineEmojiHappy } from "react-icons/hi";
+
+// import team_1 from "../../../public/images/team-1.jpg";
+// import team_2 from "../../../public/images/team-2.jpg";
+// import team_3 from "../../../public/images/team-3.jpg";
+// import team_4 from "../../../public/images/team-4.jpg";
+
+
+const categories = [
+    {
+        id: 1,
+        icon: <HiOutlineDeviceMobile className="text-white" />,
+        name: "Devices",
+        status: "250 in stock, 346+ sold",
+        btn: <MdOutlineKeyboardArrowRight />,
+    },
+    {
+        id: 2,
+        icon: <IoTicketOutline className="text-white" />,
+        name: "Tickets",
+        status: "123 closed, 15 open",
+        btn: <MdOutlineKeyboardArrowRight />,
+    },
+    {
+        id: 3,
+        icon: <GoInbox className="text-white" />,
+        name: "Error logs",
+        status: "1 is active, 40 closed",
+        btn: <MdOutlineKeyboardArrowRight />,
+    },
+    {
+        id: 4,
+        icon: <HiOutlineEmojiHappy className="text-white" />,
+        name: "Happy users",
+        status: "+ 430",
+        btn: <MdOutlineKeyboardArrowRight />,
+    }
+]
+
+export function Table_Category() {
+    return (
+        <Table className='overflow-hidden'>
+            <TableBody className=''>
+                {categories.map((category) => (
+                    <TableRow key={category.id}>
+                        <TableCell className="font-medium w-0"><div className="bg-black p-2 rounded-[40%]">{category.icon}</div></TableCell>
+                        <TableCell className="py-0">
+                            <h6 className="text-base font-medium">{category.name}</h6>
+                            <small className={`text-slate-500 rounded-sm font-medium`}>{category.status}</small>
+                        </TableCell>
+                        <TableCell className="text-right">
+                            {<ButtonSec name={''} icon={category.btn} class={`p-[0.5rem] bg-transparent w-10 h-10 rounded-[50%] text-lg transition-all hover:translate-x-1 hover:bg-slate-200`} />}
                         </TableCell>
                     </TableRow>
                 ))}

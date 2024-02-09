@@ -19,6 +19,8 @@ import PostCard from "@/components/post_card/post_card";
 import Project_Track_Card from "@/components/project_track_card/project_track_card";
 import Sale_Track_Card from "@/components/sales_track_card/sales_track_card";
 import AuthorCard from "@/components/author_card/author_card";
+import CategoryCard from "@/components/category_card/category_card";
+import { FaRegCopyright } from "react-icons/fa6";
 
 
 const card_2 = {
@@ -59,11 +61,13 @@ const Default = () => {
                     <Sale_Track_Card class={`sm:col-span-full xl:col-span-3 mt-5`} chatarea_height={chatarea_height} />
                 </div>
             </div>
-            <div className="border border-black mt-5 grid sm:grid-cols-8 xl:grid-cols-9 gap-5">
-                <AuthorCard class={`sm:col-span-4 xl:col-span-5`} />
+            <div className="mt-5 grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-9 gap-5">
+                <AuthorCard class={`lg:col-span-5 xl:col-span-6`} />
+                <CategoryCard class={`lg:col-span-3`} />
             </div>
-            <div className="border border-black mt-5 h-11">
-
+            <div className="foot_strip mt-5 h-fit flex justify-between items-center p-2">
+                <div className="flex justify-center"><FaRegCopyright className="me-1 mt-1 text-slate-600 text-sm" /><p className="text-slate-600 text-sm">made with  by <strong>Creative Tim</strong> for a better web.</p></div>
+                <div></div>
             </div>
         </div>
     );
