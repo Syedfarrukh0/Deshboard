@@ -632,17 +632,10 @@ export function Table_Author_Member() {
 // ////////////////////////////////////
 // custom category table
 // ////////////////////////////////////
-// import { Avatar_pri } from "./avatar"
-// import { ButtonPri } from "./button"
 import { HiOutlineDeviceMobile } from "react-icons/hi";
 import { IoTicketOutline } from "react-icons/io5";
 import { GoInbox } from "react-icons/go";
 import { HiOutlineEmojiHappy } from "react-icons/hi";
-
-// import team_1 from "../../../public/images/team-1.jpg";
-// import team_2 from "../../../public/images/team-2.jpg";
-// import team_3 from "../../../public/images/team-3.jpg";
-// import team_4 from "../../../public/images/team-4.jpg";
 
 
 const categories = [
